@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Assignment 4 - Nizami</title>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <div class="mainDiv">
+    
+      
+        <img src="img/bear.gif" alt="bear waving">
+        <button onclick="displayMyData()">Click Here to Start</button>
+    </div>
+
+    <script>
+let webBody = document.getElementsByClassName("mainDiv")[0];
+let bodyTitle = document.getElementById("title");
+
+function displayMyData(){
+     bodyTitle.innerHTML= "Ahmad Nizami's Background &#128515;"
+fetch("https://nizamiahmad.github.io/homework4/background.json")
+.then(res => res.json())
+.then((data) =>{ 
+    let allInfo = data.map(function(displayInfo){
+      return `
+      <div class="infoBody">
+      <p> School: ${displayInfo.School}</p>
+      <p> Major/Degree: ${displayInfo.Major}</p>
+      <p> Type: ${displayInfo.Type}</p>
+      <p> Year of Graduation: ${displayInfo.Year}</p>
+      </div>
+      `;
+    }); 
+webBody.innerHTML= allInfo;})
+}
+
+    </script>
+</body>
+</html>
