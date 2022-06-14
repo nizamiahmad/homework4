@@ -1,0 +1,14 @@
+[
+    {
+        "School": "Boston University",
+        "Major": "Software Engineering",
+        "Type":"Masters",
+        "Year": 2023
+    },
+    {
+        "School": "American University of Afghanistan",
+        "Major": "Bachelors of Business Administration",
+        "Type":"BS",
+        "Year": 2016  
+    }
+]
